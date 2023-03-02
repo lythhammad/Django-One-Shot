@@ -17,8 +17,9 @@
           <tbody>
             {% for todo_list in todo_lists %}
             <tr>
-   <td><a href="{% url 'show_detail' todo_list.id %}">{{ todo_list.name }}</a></td>
+              <td><a href="{% url 'show_detail' todo_list.id %}">{{ todo_list.name }}</a></td>
               <td><a href="{% url 'show_detail' todo_list.id %}">{{ todo_list.id }}</a></td>
+              <a href="{% url 'todo_list_create' %}">p</a>
             </tr>
             {% endfor %}
           </tbody>

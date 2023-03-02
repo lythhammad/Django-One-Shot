@@ -21,3 +21,8 @@ class TodoItem(models.Model):
         related_name="items",
         on_delete=models.CASCADE,
     )
+
+
+class TodoListForm(models.Model):
+    model = TodoList
+    fields = "name"

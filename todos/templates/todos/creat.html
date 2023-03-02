@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Todo List</title>
+      </head>
+      <body>
+        <h1>Todo List</h1>
+        <ul>
+          {% for todo_list in todo_lists %}
+            <li><a href="{% url 'todo_list_detail' id=todo_list.id %}">{{ todo_list.name }}</a></li>
+          {% empty %}
+            <li>No todo lists yet.</li>
+          {% endfor %}
+        </ul>
+        <a href="{% url 'todo_list_create' %}">Create a new to-do list</a>
+      </body>
+</html>
