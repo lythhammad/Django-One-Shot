@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Todo Lists</title>
+    <title>My Todo Lists</title>
   </head>
   <body>
     <main>
@@ -15,11 +15,12 @@
             </tr>
           </thead>
           <tbody>
-			{% for item in items %}
-			<tr>
-				<td>{{item.name}}</td>
-			</tr>
-			{% endfor %}
+            {% for todo_list in todo_lists %}
+            <tr>
+   <td><a href="{% url 'show_detail' todo_list.id %}">{{ todo_list.name }}</a></td>
+              <td><a href="{% url 'show_detail' todo_list.id %}">{{ todo_list.id }}</a></td>
+            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>

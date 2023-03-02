@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>{{ task_list.name }}</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>{{ task_list.name }}</h1>
+        <h2>Tasks</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Task </th>
+              <th> Due date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for task in task_list.all %}
+            <tr>
+                <td><a href="{% url 'show_detail' task.id %}">{{ task.task }}</a></td>
+                <td>{{ task.due_date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
